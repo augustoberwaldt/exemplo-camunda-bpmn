@@ -1,0 +1,34 @@
+spring.application.name: simpleApplication
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/app_db;DB_CLOSE_ON_EXIT=FALSE
+#   datasource:
+#     url: jdbc:mysql://dev-mysql-shared-db.dev-sicredi.in:3306/camundabpmdb?useLegacyDatetimeCode=false&useTimezone=true&serverTimezone=UTC
+#     driverClassName: com.mysql.cj.jdbc.Driver
+#     username: camundabpm
+#     password: camundabpm
+#   jpa:
+#     properties:
+#     hibernate: { dialect: org.hibernate.dialect.MySQL5InnoDBDialect }
+
+camunda:
+  bpm:
+    application:
+      delete-upon-undeploy: false
+      scan-for-process-definitions: false
+      deploy-changed-only: true
+      resume-previous-versions: true
+      resume-previous-by: a value
+    job-execution:
+      enabled: true
+    metrics:
+      enabled: false
+      db-reporter-activate: false
+    webapp:
+      index-redirect-enabled: true
+      admin-user:
+        id: augusto
+        password: superSecret
+
+#camunda.bpm.auto-deployment-enabled: false
+
